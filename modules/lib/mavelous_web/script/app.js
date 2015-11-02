@@ -1,6 +1,7 @@
 goog.provide('Mavelous.App');
 
 goog.require('Mavelous.AppRouter');
+goog.require('Mavelous.AirspeedButton');
 goog.require('Mavelous.BatteryButton');
 goog.require('Mavelous.CommStatusButtonView');
 goog.require('Mavelous.CommStatusPopoverViewDelegate');
@@ -191,6 +192,11 @@ Mavelous.App.prototype.start = function() {
   this.batteryButton = new Mavelous.BatteryButton({
     'mavlinkSrc': this.mavlinkAPI,
     'el': $('#navbar-btn-battery')
+  });
+  
+  this.airspeedButton= new Mavelous.AirspeedButton({
+    'mavlinkSrc':this.mavlinkAPI,
+    'el' : $('#navbar-btn-airspeed')
   });
 
   this.settingsView = new Mavelous.SettingsView({

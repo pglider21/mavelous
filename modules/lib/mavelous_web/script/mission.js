@@ -242,6 +242,7 @@ mavelous.MissionItemType = {
       }),
   RETURN_TO_LAUNCH: mavelous.makeMissionItemType_('RETURN_TO_LAUNCH', 20),
   LAND: mavelous.makeMissionItemType_('LAND', 21),
+  AUTO: mavelous.makeMissionItemType_('AUTO', 220),
   TAKEOFF: mavelous.makeMissionItemType_(
       'TAKEOFF', 22, {
         z: 'Alt'

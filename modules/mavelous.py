@@ -215,6 +215,20 @@ class ModuleState(object):
         0,  # param6
         0)  # param7
       self.module_context.queue_message(msg)
+    elif m['command'] == 'NAV_AUTO':
+      msg = mavlinkv10.MAVLink_command_long_message(
+        self.module_context.status.target_system,
+        self.module_context.status.target_component,
+        mavlinkv10.MAV_CMD_DO_SET_MODE,
+        0,  # confirmation
+      220,  # param1-enable AUTO mode
+        0,  # param2
+        0,  # param3
+        0,  # param4
+        0,  # param5
+        0,  # param6
+        0)  # param7
+      self.module_context.queue_message(msg)
     elif m['command'] == 'NAV_LAND':
       msg = mavlinkv10.MAVLink_command_long_message(
         self.module_context.status.target_system,    # target_system

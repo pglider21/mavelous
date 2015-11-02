@@ -2,7 +2,7 @@ WEB_DIR = modules/lib/mavelous_web
 JS_SCRIPT_DIR = ${WEB_DIR}/script
 TOOL_DEPS_ROOT = .tools
 
-CLOSURE_COMPILER_URL = http://closure-compiler.googlecode.com/files/compiler-latest.zip
+CLOSURE_COMPILER_URL = http://dl.google.com/closure-compiler/compiler-latest.zip
 CLOSURE_COMPILER_DIR = ${TOOL_DEPS_ROOT}/compiler
 CLOSURE_COMPILER = ${CLOSURE_COMPILER_DIR}/compiler.jar
 
@@ -12,6 +12,7 @@ CLOSURE_LIBRARY_DIR = ${WEB_DIR}/third_party/closure-library
 CLOSURE_BUILDER = ${CLOSURE_LIBRARY_DIR}/closure/bin/build/closurebuilder.py
 
 JS_FILES = app.js \
+           airspeed.js \
 	   batterystatus.js \
 	   commstatus.js \
 	   commstatuspopover.js \

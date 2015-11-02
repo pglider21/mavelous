@@ -35,6 +35,7 @@ Mavelous.FlightModePopoverViewDelegate.prototype.popoverDestroyed = function() {
   this.cleanupSubview('loiterButtonView');
   this.cleanupSubview('rtlButtonView');
   this.cleanupSubview('landButtonView');
+  this.cleanupSubview('autoButtonView');
 };
 
 Mavelous.FlightModePopoverViewDelegate.prototype.setupPopover = function() {
@@ -44,10 +45,13 @@ Mavelous.FlightModePopoverViewDelegate.prototype.setupPopover = function() {
       '<a class="btn" id="flightmode-btn-rtl" href="#">RTL</a>';
   var land =
       '<a class="btn" id="flightmode-btn-land" href="#">Land</a>';
+  var auto=
+      '<a class="btn" id="flightmode-btn-auto" href="#">Auto</a>';
   var arm =
       '<p><a class="btn" id="flightmode-btn-arm" href="#">Arm</a></p>';
+ 
 
-  this.$el.find('.popover-content').html(arm + '<br />' + loiter + rtl + land);
+  this.$el.find('.popover-content').html(arm + '<br />' + loiter + rtl + land + auto);
 
   this.armingButtonView = new Mavelous.ArmingButtonView({
     'el': $('#flightmode-btn-arm'),
@@ -71,7 +75,13 @@ Mavelous.FlightModePopoverViewDelegate.prototype.setupPopover = function() {
     'model': this.commandModel,
     'command': 'NAV_LAND'
   });
-};
+  
+  this.autoButtonView= new Mavelous.CommandButtonView({
+    'el':$('#flightmode-btn-auto'),
+    'model': this.commandModel,
+    'command': 'NAV_AUTO'
+   });
+  };
 
 Mavelous.FlightModePopoverViewDelegate.prototype.cleanupSubview = function (subviewname) {
   if (this[subviewname]) {

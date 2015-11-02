@@ -57,6 +57,8 @@ class MavelousWebTest(unittest.TestCase):
     wait_for_text(sel, 'navbar-btn-mode', 'LAND', 1000)
     sel.find_element_by_id('flightmode-btn-loiter').click()
     wait_for_text(sel, 'navbar-btn-mode', 'LOITER', 1000)
+    sel.find_element_by_id('flightmode-btn-auto').click()
+    wait_for_text(sel, 'navbar-btn-mode','AUTO',1000)
 
   def test_gps_button(self):
     "Testing GPS button"
